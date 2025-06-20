@@ -1,0 +1,6 @@
+@UrlShorty.Redirect_HostAddress = http://localhost:5228
+
+GET {{UrlShorty.Redirect_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
