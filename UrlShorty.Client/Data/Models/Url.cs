@@ -3,7 +3,7 @@
 	public class Url
 	{
 		// Unique identifier for the URL entity
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 
 		// The original, long URL to be shortened
 		public string? OriginalUrl { get; set; }
@@ -26,5 +26,12 @@
 		// Number of times the short URL has been accessed
 		public int ClickCount { get; set; } = 0;
 
+		public Url()
+		{
+			// Initialize CreatedOn and UpdatedOn to the current date and time
+			CreatedOn = DateTime.UtcNow;
+			UpdatedOn = DateTime.UtcNow;
+			Id = Guid.NewGuid();
+		}
 	}
 }
