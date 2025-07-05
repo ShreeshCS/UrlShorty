@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UrlShorty.Client.Data.Models;
 
 namespace UrlShorty.Client.Controllers
 {
@@ -6,7 +7,12 @@ namespace UrlShorty.Client.Controllers
 	{
 		public IActionResult Index()
 		{
-			return View();
+			Url url = new Url()
+			{
+				OriginalUrl = "https://example.com",
+				ShortenedUrl = "exmpl",
+			};
+			return View(url);
 		}
 	}
 }
